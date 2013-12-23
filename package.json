@@ -1,0 +1,11 @@
+{
+    "name": "got",
+    "version": "0.0.1",
+    "dependencies":{
+        "require":  ">0.0.1",
+        "socket.io":">0.0.1",
+        "http":">0.0.1"
+
+    }
+
+}

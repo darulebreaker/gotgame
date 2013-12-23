@@ -1,0 +1,9 @@
+1. very basics , connect to server and assign faction randomly and announce your presence to everyone
+2. anything card related, shuffling, etc.
+3. everything a player starts with at the very beginniner
+4. map related, starting, moving, etc. land only
+5. placing tokens and order of events, token related events, combat, moving, etc
+6. mustering/supplying, wilding event
+7. voting for throne, sword, raven
+8. count result per turn
+

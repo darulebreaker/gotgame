@@ -3,7 +3,8 @@
  */
 var app = require('http').createServer(handler)
 var io = require('socket.io').listen(app)
-, fs = require('fs');
+, fs = require('fs'),
+faction = require('./faction');
 
 
 app.listen(8080);
@@ -35,6 +36,8 @@ io.sockets.on('connection', function (socket) {
     // when the client emits 'adduser', this listens and executes
     socket.on('adduser', function(username){
         // we store the username in the socket session for this client
+        faction.assign(username);
+        username=  username + ":"+faction.assignment[username];
         socket.username = username;
         // add the client's username to the global list
         usernames[username] = username;

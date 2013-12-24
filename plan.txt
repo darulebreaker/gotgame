@@ -1,5 +1,5 @@
-1. very basics , connect to server and assign faction randomly and announce your presence to everyone
-1.5 chat
+1. very basics , connect to server and assign faction randomly and announce your presence to everyone (x)
+1.5 chat  (x)
 2. anything card related, shuffling, etc.
 3. everything a player starts with at the very beginniner
 4. map related, starting, moving, etc. land only

@@ -21,7 +21,7 @@ function Garrison(name, image, defPoint){
     this.defPoint=defPoint;
 }
 
-function OrderToken(type , image, point ){
+function OrderToken(type , image, point, starFlag ){
     OrderToken.types={
        0: "raid",
        1: "march",
@@ -29,9 +29,10 @@ function OrderToken(type , image, point ){
        3: "support",
        4: "consolidate"
     }
-    this.type= OrderToken.types(type);
+    this.type= OrderToken.types[type];
     this.image= image;
     this.point= point;
+    this.starFlag=starFlag;
 }
 
 function PowerToken(faction, image){

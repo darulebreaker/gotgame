@@ -4,8 +4,8 @@
 var app = require('http').createServer(handler)
 var io = require('socket.io').listen(app)
 , fs = require('fs'),
-faction = require('./game/Factions');
-
+ Faction = require('./game/Factions');
+Deck= require('./game/Decks');
 
 app.listen(8080);
 
@@ -49,9 +49,23 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('updateusers', usernames);
     });
 
+    socket.on('drawCard',function(username){
+        var westeroDeck3= Deck.createWesteroDeck();
+       // console.log('-------------------new deck ----------------------------');
+        //console.log(westeroDeck3);
+        //console.log('-------------------shuffled deck ----------------------------');
+        var shuffled=Deck.shuffleDeck(westeroDeck3)
+        //console.log(shuffled);
+        //console.log(Deck.drawOne(westeroDeck3));
+       //var card = Deck.drawOne(westeroDeck3);
+        //console.log('draws card:' +card);
+
+       socket.emit('updatechat', 'SERVER', 'card was drawn:'+ JSON.stringify(Deck.drawOne(westeroDeck3)));
+    });
+
     // when the user disconnects.. perform this
     socket.on('disconnect', function(){
-        // remove the username from global usernames list
+        // remove the username from globalDeck.drawOne(westeroDeck3) usernames list
         delete usernames[socket.username];
         // update list of users in chat, client-side
         io.sockets.emit('updateusers', usernames);

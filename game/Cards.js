@@ -29,6 +29,10 @@ function WesteroCards(name, deckNumber, description, image){
     this.removeWildingFlag = function(){
         this.wildingFlag=false;
     }
+
+    this.getName= function(){
+        return this.name;
+}
 }
 
 function HouseCards( name, faction, description, image, points){

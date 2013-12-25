@@ -22,6 +22,9 @@
         });
     });
 
+    socket.on('cardDrawn', function(data){
+        $('#conversation').append(data+'<br>');
+    });
     // on load of page
     $(function(){
         // when the client clicks SEND
@@ -31,6 +34,10 @@
             // tell server to execute 'sendchat' and send along one parameter
             socket.emit('sendchat', message);
         });
+
+        $('#drawCard').click(function(){
+            socket.emit('drawCard');
+        })
 
         // when the client hits ENTER on their keyboard
         $('#data').keypress(function(e) {
@@ -50,4 +57,5 @@
     <div id="conversation"></div>
     <input id="data" style="width:200px;" />
     <input type="button" id="datasend" value="send" />
+    <input type="button" id="drawCard" value="Draw a card"/>
 </div>

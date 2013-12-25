@@ -15,9 +15,10 @@ function assign(name){
     }
     var random= Math.round(Math.random()*(remaining.length-1));
     assignment[name]= remaining.slice(random,random+1);
-    remaining.splice(random,0);
+    remaining.splice(random,1);
     //console.log(assignment);
 }
+
 
 exports.assign= assign;
 exports.assignment= assignment;

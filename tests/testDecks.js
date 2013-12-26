@@ -4,7 +4,7 @@
 
 var Deck = require("./../game/Decks");
 
-var westeroDeck3= Deck.createWesteroDeck();
+var westeroDeck3= Deck.WesteroDeck();
 console.log('-------------------new deck ----------------------------');
 console.log(westeroDeck3);
 console.log('-------------------shuffled deck ----------------------------');

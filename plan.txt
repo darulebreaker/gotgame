@@ -1,8 +1,8 @@
 1. very basics , connect to server and assign faction randomly and announce your presence to everyone (x)
 1.5 chat  (x)
 2. anything card related, shuffling, etc.( x  -- the very basic examples and tests, fill in detail later, was able to send back as text )
-2.5 order tokens (   )
-2.6 each tracks (  )
+2.5 order tokens (  x-- basic order & other tokens  )
+2.6 each tracks (x -- left out supply and influence track out for now. need to see how they are used by player first  )
 3. everything a player starts with at the very beginning,  player class. etc
 4. map related, starting, moving, etc. land only
 5. placing tokens and order of events, token related events, combat, moving, etc

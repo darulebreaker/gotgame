@@ -1,6 +1,10 @@
 /**
  * Created by darulebreaker on 12/24/13.
  */
+var Area= require("./Area"),
+    Decks= require("./Decks"),
+    Tokens=require("./Tokens");
+
 var factions = new Array("Stark", "Lannister", "Greyjoy","Baratheon", "Tyrell", "Martell");
 
 var assignment=new Array();
@@ -18,6 +22,24 @@ function assign(name){
     remaining.splice(random,1);
     //console.log(assignment);
 }
+
+function Faction(name){
+    this.name=name;
+    this.initialTerritories;
+    this.houseCards;
+    this.initialPowerToken;
+    this.initialOrderToken;
+    this.initialDominanceToken;
+    this.initialVictoryTrack;
+    this.initialSupplyTrack;
+    this.CombatUnit;
+}
+
+var Stark = new Faction('Stark');
+Stark.initialTerritories= new Area.Area('Winterfell',14,0,'placeholder',[1,13,15,16,17,21],['castle','supply','consolidation']);
+Stark.initialPowerToken = new Tokens.PowerToken('Stark','placeholder');
+
+
 
 
 exports.assign= assign;

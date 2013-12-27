@@ -2,41 +2,68 @@
  * Created by darulebreaker on 12/24/13.
  */
 var Cards = require("./../game/Cards");
-function createWesteroDeck(){
-    var deck= new Array();
-    deck.push(new Cards.WesteroCards("Web of Lies", 3, "Support Orders Cannot be played during the planning phase","placeholder"));
-    deck.push(new Cards.WesteroCards("Card 2",3, "blah","placeholder"));
-    deck.push(new Cards.WesteroCards("Card 3",3, "blah","placeholder"));
-    deck.push(new Cards.WesteroCards("Card 4",3, "blah","placeholder"));
-    deck.push(new Cards.WesteroCards("Card 5",3, "blah","placeholder"));
-    return deck;
+
+// DECK IMPLEMENTATION
+
+var Deck = function() {
+	this.myCards = new Array();
+};
+Deck.prototype.top = function() {
+	return this.myCards[0];
+};
+Deck.prototype.popAndPushToBottom = function() {
+	top = this.myCards.shift();
+	this.myCards.push(top);
+	return top;
+};
+Deck.prototype.shuffle = function() {
+	var i = this.myCards.length, j, tempi, tempi;
+	if (i === 0)
+		return false;
+	while (--i) {
+		j = Math.floor(Math.random() * (i + 1));
+		tempi = this.myCards[i];
+		tempj = this.myCards[j];
+		this.myCards[i] = tempj;
+		this.myCards[j] = tempi;
+	}
+    return true;
+};
+Deck.prototype.push = function(card) {
+        this.myCards.push(card);
+};
+
+// END DECK
+
+function createWesterosDeckOne() {
+	// add a list of cards
 }
 
-function shuffleDeck(deck) {
-    var i= deck.length, j, tempi, tempi;
-    if(i=== 0) return false;
-    while( --i){
-        j= Math.floor(Math.random()* (i+1));
-        tempi = deck[i];
-        tempj = deck[j];
-        deck[i] = tempj;
-        deck[j]= tempi;
-    }
-    return deck;
+function createWesterosDeckTwo() {
+	// add a list of cards
 }
 
-function draw(deck, amount){
-    var cards = new Array();
-    cards = deck.slice(0,amount);
-    deck.splice(0, amount); //removes from array
-    return cards
+function createWesterosDeckThree() {
+    myCards = new Deck();
+    myCards.push(new Cards.WesterosCards(1,"bullshit","bullshit","bullshit.png",0));
+    myCards.push(new Cards.WesterosCards(2,"bullshit2","bullshit2","bullshit2.png",0));
+    return myCards;
 }
 
-function drawOne(deck){
-   return draw(deck,1);
+function createWildlingsDeck() {
+	// add a list of cards
 }
 
-exports.createWesteroDeck= createWesteroDeck;
-exports.shuffleDeck= shuffleDeck;
-exports.draw=draw;
-exports.drawOne=drawOne;
+function createPostBattleDeck() {
+	// add a list of cards
+}
+
+function createHouseBattleDeck(house) {
+    // add a list of cards
+}
+exports.createWesterosDeckOne = createWesterosDeckOne;
+exports.createWesterosDeckTwo = createWesterosDeckTwo;
+exports.createWesterosDeckThree = createWesterosDeckThree;
+exports.createWildlingsDeck = createWildlingsDeck;
+exports.createPostBattleDeck = createPostBattleDeck;
+exports.createHouseBattleDeck = createHouseBattleDeck;

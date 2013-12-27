@@ -7,33 +7,51 @@
 //  3. House cards, 1,2,3,4,5,6 for each house
 //  4. battle cards
 
-function WildingCards(name, description, image){
+// Cards -> Westeros Cards
+// Cards -> House Cards -> Battle Damage, 
+// 
+
+function Card(name, description, image) {
+	this.name=name;
+//	dont think we need these..... we can add it later in html templating and css.
+	this.description=description;
+	this.image=image;
+}
+Card.prototype.getName=function() {
+	return this.name;
+}
+Card.prototype.getDescription=function() {
+	return this.description;
+}
+Card.prototype.getImage=function() {
+	return this.image;
+}
+
+function WildlingCards(name, description, image){
     this.name=name;
     this.description=description;
     this.image=image;
     this.victoryEffect = new Array(); //lowest bidder, highest bidder, every1 else
     this.defeatEffect = new Array(); //lowest bidder, highest bidder, every1 else
 }
+WildlingCards.prototype=new Card;
+WildlingCards.prototype.constructor=WildlingCards;
 
-function WesteroCards(name, deckNumber, description, image){
-    this.name=name;
-    this.description=description;
-    this.image=image;
-    this.deckNumber = deckNumber;
-    this.wildingFlag = false;
-    this.effect = new Array(); //lowest bidder, highest bidder, every1 else
 
-    this.addWildingFlag = function(){
+function WesterosCards(name, deckNumber, description, image, wildlingPoints){
+    this.wildlingPoints = wildlingPoints;
+//    if(effect instanceof Effect) {
+//    	this.effect = effect;
+//    }
+    this.addWildlingFlag = function(){
         this.wildingFlag=true;
     }
-    this.removeWildingFlag = function(){
+    this.removeWildlingFlag = function(){
         this.wildingFlag=false;
     }
+}
 
-    this.getName= function(){
-        return this.name;
-}
-}
+
 
 function HouseCards( name, faction, description, image, points){
     this.name=name;
@@ -51,8 +69,8 @@ function BattleCards( image){
 
 
 
-exports.WildingCards= WildingCards;
-exports.WesteroCards= WesteroCards;
+exports.WildlingCards= WildlingCards;
+exports.WesterosCards= WesterosCards;
 exports.HouseCards = HouseCards;
 exports.BattleCards = BattleCards;
 

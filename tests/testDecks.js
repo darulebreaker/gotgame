@@ -4,11 +4,11 @@
 
 var Deck = require("./../game/Decks");
 
-var westeroDeck3= Deck.createWesteroDeck();
+var westerosDeck3= Deck.createWesterosDeckThree();
 console.log('-------------------new deck ----------------------------');
-console.log(westeroDeck3);
+console.log(westerosDeck3);
 console.log('-------------------shuffled deck ----------------------------');
-var shuffled=Deck.shuffleDeck(westeroDeck3)
-console.log(shuffled);
+westerosDeck3.shuffle();
+console.log("shuffled");
 console.log('-------------------draw one card from deck ----------------------------');
-console.log(Deck.drawOne(westeroDeck3));
+//console.log(Deck.drawOne(westeroDeck3));

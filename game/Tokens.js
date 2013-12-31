@@ -38,7 +38,7 @@ function OrderToken(type , image, point, starFlag ){
 function PowerToken(faction, image){
     PowerToken.max=20;
     this.inHand=5;
-    this.pool = PowerToken.max- this.inhand;
+    this.pool = PowerToken.max- this.inHand;
     this.faction= faction;
     this.image = image;
 

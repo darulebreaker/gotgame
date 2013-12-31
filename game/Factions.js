@@ -3,7 +3,9 @@
  */
 var Area= require("./Area"),
     Decks= require("./Decks"),
-    Tokens=require("./Tokens");
+    Tokens=require("./Tokens"),
+    Tracks=require("./Tracks");
+
 
 var factions = new Array("Stark", "Lannister", "Greyjoy","Baratheon", "Tyrell", "Martell");
 
@@ -32,16 +34,21 @@ function Faction(name){
     this.initialDominanceToken;
     this.initialVictoryTrack;
     this.initialSupplyTrack;
-    this.CombatUnit;
 }
 
 var Stark = new Faction('Stark');
 Stark.initialTerritories= new Area.Area('Winterfell',14,0,'placeholder',[1,13,15,16,17,21],['castle','supply','consolidation']);
+Stark.initialTerritories.combatUnits=[1,2];
+Stark.houseCards=[];
 Stark.initialPowerToken = new Tokens.PowerToken('Stark','placeholder');
+Stark.initialVictoryTrack=new Tracks.VictoryTrack(2,'Stark');
+//Stark.initialSupplyTrack=new Tracks.SupplyTrack
+
 
 
 
 
 exports.assign= assign;
 exports.assignment= assignment;
+exports.Stark=Stark;
 //assign('bob');

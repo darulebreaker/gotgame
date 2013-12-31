@@ -12,3 +12,4 @@ faction.assign('Dona');
 faction.assign('Joe');
 
 console.log(faction.assignment);
+console.log(faction.Stark);

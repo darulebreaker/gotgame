@@ -12,7 +12,7 @@
 // position on victory track
 // position on supply track
 // position on dominance tracks
-// combat units
+// combat units--> it's associated to land only
 
 function Player(name, faction){
     this.name=name;
@@ -24,6 +24,8 @@ function Player(name, faction){
     this.dominanceToken = faction.initialDominanceToken;
     this.victoryTrack = faction.initialVictoryTrack;
     this.supplyTrack = faction.initialSupplyTrack;
-    this.combatUnits = faction.CombatUnit;
+
 
 }
+
+exports.Player= Player;

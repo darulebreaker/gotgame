@@ -6,6 +6,7 @@
 3. everything a player starts with at the very beginning,  player class. etc (x -- got a basic Stark player)
 4. map related, starting, moving, etc. land only ( x --did very basic move not involving combat   )
 5. placing tokens and order of events, token related events, combat, moving, etc -- event based engine? look up event related stuff in node.js
+5.5 add more details, graphics, get all the data inputed for 2 factions, and allow players to interact from browser
 6. mustering/supplying, wilding event
 7. voting for throne, sword, raven
 8. count result per turn
